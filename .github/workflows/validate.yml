@@ -1,0 +1,58 @@
+name: Validate deployment source
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Validate templates, bootstrap, links and acceptance guards
+        run: python3 scripts/validate.py
+
+  release:
+    name: Publish verified engineering prerelease
+    needs: validate
+    if: >-
+      github.event_name == 'push' &&
+      github.ref == 'refs/heads/main' &&
+      github.repository == 'Thox-ai/thoxos-azure'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    concurrency:
+      group: thoxos-azure-release
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Publish and read back this exact validated source
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_HOST: github.com
+          EXPECTED_COMMIT: ${{ github.sha }}
+        run: python3 scripts/release_from_actions.py --expected-commit "$EXPECTED_COMMIT"
+      - name: Preserve public archive and publication evidence
+        if: ${{ always() && !cancelled() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: release-publication-${{ github.sha }}
+          path: |
+            dist/thoxos-azure-*.zip
+            dist/thoxos-azure-*.sha256
+            dist/release-publication-receipt.json
+          if-no-files-found: warn
+          retention-days: 30

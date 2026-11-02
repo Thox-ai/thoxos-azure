@@ -1,0 +1,7 @@
+{
+  "repository": "Thox-ai/thoxos-azure",
+  "deploymentVersion": "v0.1.0",
+  "kernelRelease": "v0.9.1",
+  "kernelRepository": "Thox-ai/thoxinux",
+  "kernelSourceCommit": "84b4a7e740496297ca79dff735834ca2a8f2bad3"
+}

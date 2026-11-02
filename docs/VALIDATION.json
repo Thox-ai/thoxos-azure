@@ -1,0 +1,63 @@
+{
+  "recorded_utc": "2026-11-02T07:17:44.231925+00:00",
+  "status": "offline_source_validation_passed_publication_blocked",
+  "command": "python3 scripts/validate.py",
+  "exit_code": 0,
+  "tests_passed": 67,
+  "test_scopes": {
+    "cli_deployment_guards": 21,
+    "portal_template_receipt_and_privilege_boundaries": 13,
+    "publication_links_paths_and_archive_guards": 21,
+    "actions_release_identity_permissions_and_asset_readback": 12
+  },
+  "bootstrap_shell_syntax": "passed",
+  "embedded_python_blocks_compiled": 9,
+  "generated_arm_byte_match": "passed",
+  "versioned_button_format_and_target_check": "passed_offline_only",
+  "public_template_http_check": "not_run_no_published_tag",
+  "bootstrap_sha256": "4f0e827609f163883ea615a1875a8780f3b7dcea9e9bbe6af9438aa367eec4fe",
+  "arm_template_sha256": "fd7d72e85c756ef6df46807b44bd1a31c8e2f621b80d5158c634c6b3fe006799",
+  "review": {
+    "independent_static_review": "completed",
+    "critical_findings": "resolved",
+    "review_lanes": [
+      "release/bootstrap implementation",
+      "Azure and publication review",
+      "repository and publication tests"
+    ]
+  },
+  "unrun": [
+    "remote source push and CI",
+    "formal GitHub prerelease publication",
+    "anonymous public raw-template readback",
+    "Azure Portal form execution",
+    "Azure ARM server validation",
+    "Azure what-if",
+    "actual Azure deployment",
+    "real kernel boot on Azure",
+    "Azure host restart acceptance"
+  ],
+  "limits": "Unit tests use local fixtures/mocks. They create no cloud resources and do not boot the real ThoxInux kernel.",
+  "repository_access": {
+    "repository": "Thox-ai/thoxos-azure",
+    "repository_id": "1442544460",
+    "visibility": "public",
+    "default_branch": "main",
+    "empty_at_check": true,
+    "publication_attempt": "blocked_by_github_integration",
+    "http_status": 403,
+    "error": "Resource not accessible by integration",
+    "remote_mutations_completed": 0
+  },
+  "documentation_review": {
+    "status": "completed",
+    "scope": [
+      "root README and documentation index",
+      "user/development/architecture/status/release/security/contribution guides",
+      "dynamic CI/release badges and exact deployment button",
+      "relative links, anchors and shell examples",
+      "absolute versioned documentation links in GitHub release body"
+    ]
+  },
+  "archive_format": "stored ZIP entries with fixed timestamps, explicit Unix metadata and LF checksum bytes"
+}

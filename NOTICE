@@ -1,0 +1,25 @@
+ThoxOS Azure Deployment
+Copyright 2026 THOX.ai LLC.
+
+Your AI. Your Data. Your Rules.™
+
+This repository contains Azure deployment and verification automation licensed
+under the Apache License, Version 2.0. See LICENSE.
+
+The deployed ThoxInux v0.9.1 kernel is a separate Apache-2.0 release maintained
+at https://github.com/Thox-ai/thoxinux and derived from Ginux. Its executable,
+build receipt, license and notice are downloaded and checksum-verified during
+provisioning. The upstream GINUX_LICENSE and GINUX_NOTICE are preserved on the
+host. This repository does not replace those notices or claim ownership of
+upstream contributions.
+
+Ginux upstream source: https://github.com/gmkurtzer/ginux
+Pinned ThoxInux source used by this deployment:
+84b4a7e740496297ca79dff735834ca2a8f2bad3
+
+Azure, Ubuntu, QEMU, OVMF and GitHub are products or projects of their respective
+owners. Host packages retain their own licensing terms. No Microsoft endorsement
+or native ThoxInux-on-Hyper-V support is implied.
+
+Proprietary MeshStack, ThoxWork application code, ThoxKey firmware and private
+THOX execution policy are not included in this repository.

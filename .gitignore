@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+!.env.example
+.publication-receipts/
+dist/
+thoxos-azure-plan/
+thoxos-azure-status/
+plan-*/
+*.pem
+*.key
+*.pub
+deployment.local.json
+parameters.local.json
+.DS_Store
