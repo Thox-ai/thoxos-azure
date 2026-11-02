@@ -211,3 +211,17 @@ Both checksum checks must succeed before using the extracted files. On macOS, us
 Copyright 2026 THOX.ai LLC. Deployment automation is licensed under [Apache-2.0](LICENSE). See [NOTICE](NOTICE) for upstream attribution and separate component licensing.
 
 This repository contains the open source deployment integration. Proprietary MeshStack and ThoxWork application code and ThoxKey firmware are not included.
+
+---
+
+## Legal
+
+Copyright (c) 2024-2026 THOX.ai LLC. All rights reserved.
+
+**THOX.ai LLC**
+- CTO: Tommy Xaypanya
+- CEO: Craig Ross
+
+Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) for details.
+
+Unauthorized copying, modification, merger, publication, distribution, sublicensing, and/or selling of this software, via any medium, is strictly prohibited without prior written consent from THOX.ai LLC.
